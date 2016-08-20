@@ -41,19 +41,6 @@ def post_webhook():
 
     return "ok", 200
 
-
-def rules(recipient_id, message_text):
-    rules = {
-        "Hello": "World",
-        "Foo": "Bar"
-    }
-
-    if message_text in rules:
-        reply(recipient_id, rules[message_text])
-
-    else:
-        reply(recipient_id, "You have to write something I understand ;)")
-
 def reply(recipient_id, message_text):
     params = {
         "access_token": access_token
@@ -71,6 +58,18 @@ def reply(recipient_id, message_text):
             "text": message_text
         }
     })
+
+def rules(recipient_id, message_text):
+    rules = {
+        "Hello": "World",
+        "Foo": "Bar"
+    }
+
+    if message_text in rules:
+        reply(recipient_id, rules[message_text])
+
+    else:
+        reply(recipient_id, "You have to write something I understand ;)")    
 
     print data
 
