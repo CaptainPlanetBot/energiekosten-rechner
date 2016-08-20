@@ -53,7 +53,8 @@ def rules(recipient_id, message_text):
 
     else:
         reply(recipient_id, "You have to write something I understand ;)")
-        
+
+def reply(recipient_id, message_text):
     params = {
         "access_token": access_token
     }
